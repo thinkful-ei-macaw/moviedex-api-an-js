@@ -30,22 +30,22 @@ app.get('/', (req, res) => {
 })
 
 app.get('/movie', function GetMovie(req, res) {
-  let res = movies;
+  let resp = movies;
 
   if (req.query.genre) {
-    res = res.filter(movie =>
+    resp = resp.filter(movie =>
       movie.genre.toLowerCase().includes(req.query.genre.toLowerCase())
     )
   }
 
   if (req.query.country) {
-    res = res.filter(movie =>
+    resp = resp.filter(movie =>
       movie.country.toLowerCase().includes(req.query.country.toLowerCase())
     )
   }
 
   if (req.query.avg_vote) {
-    res = res.filter(movie =>
+    resp = resp.filter(movie =>
       Number(movie.avg_vote) >= Number(req.query.avg_vote)
     )
   }
