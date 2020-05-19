@@ -50,7 +50,7 @@ app.get('/movie', function GetMovie(req, res) {
     )
   }
 
-  res.json(response)
+  res.json(resp)
 })
 
 app.use((error, req, res, next) => {
